@@ -1,0 +1,170 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{titling}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Reinforcement Learning based Controller for Automotive HVAC Control},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Reinforcement Learning based Controller for Automotive HVAC
+Control}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\textit{Daud Raza} \\
+\textit{National University of Science \& Technology} \\
+\textit{draza.rime22smme@student.nust.edu.pk} 
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+The energy consumption of Heating, Ventilation, and Air Conditioning
+(HVAC) systems in automotive applications is a critical consideration
+for both environmental sustainability and driver comfort. As vehicles
+become more technologically advanced and consumer expectations for
+comfort rise, optimizing HVAC control strategies becomes increasingly
+imperative. Traditional control schemes such as Model Predictive Control
+(MPC), Bang-bang control, fuzzy logic, and
+Proportional-Integral-Derivative (PID) controllers have been widely
+employed in automotive HVAC systems. However, these conventional
+approaches often struggle to strike an optimal balance between energy
+efficiency and occupant comfort.
+
+Reinforcement Learning (RL) has emerged as a transformative approach in
+HVAC control, offering promising solutions to the challenges faced by
+traditional control methods. RL algorithms enable HVAC systems to learn
+optimal control policies through interaction with their environment,
+leveraging feedback mechanisms to continuously improve performance. By
+dynamically adjusting control actions based on real-time data and
+environmental conditions, RL-based HVAC systems can adapt to changing
+circumstances and optimize energy consumption while maintaining desired
+comfort levels for vehicle occupants.
+
+\begin{itemize}
+\tightlist
+\item
+  To be Continued -
+\end{itemize}
+
+\hypertarget{literature-review}{%
+\subsection{Literature Review}\label{literature-review}}
+
+\hypertarget{mckee2020-deep-reinforcement-learning-for-residential-hvac-control-with-consideration-of-human-occupancy}{%
+\subsubsection{Mckee2020: Deep Reinforcement learning for Residential
+HVAC Control with Consideration of Human
+Occupancy}\label{mckee2020-deep-reinforcement-learning-for-residential-hvac-control-with-consideration-of-human-occupancy}}
+
+The paper presents a DRL method to reduce energy costs in residential
+HVAC operation while maintaining comfort levels. The RL model being used
+in this scenario is a Deep Q Network, in which the values of the Q Table
+are estimated using neural networks. The neural network architecture and
+the algorithm for the RL model is mentioned in the paper, but many
+specifics regarding the base simulation model on which the controller is
+operating are not mentioned. Utilizing a multi-zone cooling unit, the
+DRL controller schedules HVAC on/off commands based on dynamic energy
+prices. It employs precooling strategies during low-price periods to cut
+costs without compromising comfort. In simulations, the DRL controller
+achieved a 43.89\% cost reduction compared to traditional fixed-setpoint
+operations, indicating potential for real-world application in smart
+homes for energy-efficient automation. The system is prepared for live,
+real-time testing in residential environments, aiming to validate the
+simulated savings and operational efficiency in actual use cases.
+Overall the paper is short and concise, and provides some details
+regarding how the reward function was structured.
+
+\hypertarget{yang2021-towards-healthy-and-cost-effective-indoor-environment-management-in-smart-homes-a-deep-reinforcement-learning-approach}{%
+\subsubsection{Yang2021: Towards healthy and cost-effective indoor
+environment management in smart homes: A deep reinforcement learning
+approach}\label{yang2021-towards-healthy-and-cost-effective-indoor-environment-management-in-smart-homes-a-deep-reinforcement-learning-approach}}
+
+The paper presents a study on autonomous indoor environment management
+for smart homes using a deep reinforcement learning (DRL) approach. The
+methodology involves formulating the problem as a Markov decision
+process and employing a double deep Q network (DDQN) with prioritized
+experience replay (PER) mechanism. This strategy enables adaptive
+control decisions without requiring forecast information of system
+uncertainties. The results demonstrate the method's adaptability to
+variations in weather conditions, electricity prices, and home occupancy
+patterns. It also shows a reduction in average daily energy cost by
+3.51\% and 8.56\% in winter scenarios and 4.05\%, 7.88\% in summer
+scenarios, while maintaining indoor air quality and temperature within
+desired ranges. The approach offers a promising solution for optimizing
+indoor environmental quality and minimizing energy costs in smart homes.
+There are some issues with the paper in regards to validation. The model
+for the house environment has not been compared in the paper with any
+baseline benchmarks, so there is some doubt whether the model actually
+operates in accordance to actual physics. Secondly, the method for
+comparison between the MPC, DDQN, and DDQN-PER is explained in detail.
+
+\end{document}
